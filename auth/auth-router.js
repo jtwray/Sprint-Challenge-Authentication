@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const router = require('express').Router();
 const jwtSecret = require('../api/config/secrets.js');
 
-const Users = require('../api/users/users-model.js')
+const Users = require('../api/users/users-model.js');
 
 router.post('/register', (req, res) => {
   // implement registration
@@ -12,9 +12,9 @@ router.post('/register', (req, res) => {
   const hash = bcrypt.hashSync(user.password, 7);
   user.password = hash;
 
-  Users.add(user).then(saved => { res.status(201).json(saved) })
+  Users.add(user).then(saved => { res.status(201).json({saved:`id:${saved.id} , username:${saved.username} , token:${saved.password} `}); })
     .catch(error => {
-      res.status(500).json(error);
+      res.status(500).json({error:`This user already exists`});
     });
 });
 
@@ -29,8 +29,8 @@ router.post('/login', (req, res) => {
     } else {
       res.status(401).json({ message: 'Invalid Credentials' });
     }
-  }).catch(error => { res.status(500).json(error); console.error(error); })
-});;
+  }).catch(error => { res.status(500).json(error); console.error(error); });
+});
 
 function signToken(user) {
   const payload = { userid: user.id };

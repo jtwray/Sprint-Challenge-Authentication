@@ -8,5 +8,5 @@ module.exports = function(server) {
     server.use(helmet());
     server.use(express.json());
     server.use(cors());
-    server.user(morgan('dev'));
+    server.use(morgan('dev'));
 };
