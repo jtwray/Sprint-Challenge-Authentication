@@ -40,11 +40,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+sessions allow us a way to authenticate and authorize access for users across a timeframe so that you dont have to relogin every time a page loads
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+becrypt uses a salt and a hash algorithm over accumalative hashing round to deeply bury the original hidden data 
 
 - [ ] What does bcrypt do to slow down attackers?
 
+you can increase the number of cycles you run the encryption process each time plugging in the new result back into the algorithm to further and further remove the encryption from the original data string. each ecryption increases the amount of computing power needed as power is a unit describing the amount of work to be done over time. basically more encryption cycles would require more and more time for the computer to reverse engineer the hash the algorithm used and how many rounds were used to generate the hash in the first place
+
 - [ ] What are the three parts of the JSON Web Token?
+
+the header contains the algorithm with the token type the payload include claims information or any other data we want to store in the token such as permissions data or userid
+the signature is a string produced by base64 encoding the header and payload together and signing it with a secret
 
 ## Minimum Viable Product
 
