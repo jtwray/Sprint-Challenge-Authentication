@@ -17,5 +17,3 @@ server.use('/api/auth', checkFor('username'), checkFor('password'), authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
 module.exports = server;
-
-

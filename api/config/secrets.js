@@ -1,3 +1,3 @@
 module.exports = {
-    jwtSecret: process.env.JWT_SECRET || 'Dan marino plays for the miami dolphins flag football league'
-};
+    jwtSecret: process.env.JWT_SECRET || 'is it secret, is it safe?'
+}
