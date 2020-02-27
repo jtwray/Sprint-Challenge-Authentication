@@ -7,7 +7,7 @@ describe('server.js', () => {
     });
 
     // test for GET/
-    describe('GET /', () => {
+    describe('GET /', () => { 
 
         it('should return 200 ', async () => {
             const res = await request(server).get('/');
